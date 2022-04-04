@@ -1,0 +1,21 @@
+
+td{
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+}
+body {
+
+}
+.gameboard{
+    background-color: black;
+    color: aliceblue;
+    text-align: center;
+
+}
+.nameInput{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+}
