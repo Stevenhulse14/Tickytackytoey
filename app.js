@@ -20,3 +20,7 @@ toe_board.addEventListener('click', (e)=>{
         count--
     }
 })
+
+let button = document.querySelectorAll('#button')
+
+console.log(button)
