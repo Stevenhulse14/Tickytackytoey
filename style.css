@@ -65,6 +65,6 @@ td{
 }
 td:hover{
     background-color: brown;
-    box-shadow: 20px 5px 6px 7px rgba(245, 245, 245, 0.3), 4px 5px 6px 12px rgba(194, 72, 72, 0.3s);
+    box-shadow: 20px 5px 6px 7px rgba(245, 245, 245, 0.3), 4px 5px 6px 12px rgba(245, 24, 24, 0.3);
     transform: scale(0.9) translate(-10%, -10%);
 }
