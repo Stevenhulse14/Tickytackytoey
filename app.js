@@ -7,8 +7,6 @@ let count = 0
 
 
 let toe_board = document.querySelector(".gameboard")
-//console.log(toe_board)
-
 toe_board.addEventListener('click', (e)=>{
     let selection = e.target.innerHTML
     
@@ -21,6 +19,23 @@ toe_board.addEventListener('click', (e)=>{
     }
 })
 
-let button = document.querySelectorAll('#button')
+let resetButton = document.querySelector('.reset')
+resetButton.addEventListener('click', (e)=>{
+    console.log(e);
+    [...document.querySelectorAll('td')].forEach( tdDomElement => tdDomElement.innerHTML = "" )
+})
 
-console.log(button)
+let sbutton = document.querySelector('#playerSubmit')
+sbutton.addEventListener('submit', (e)=>{
+    e.preventDefault()
+    let p1 = document.getElementById('p1').value
+    let p2 = document.getElementById('p2').value
+    document.getElementById('displayp1').innerHTML = `X = ${p1}`
+    document.getElementById('displayp2').innerHTML = `O = ${p2}`
+    Remove('playerSubmit')
+})
+
+function Remove(form_id) {
+        let myform = document.getElementById(form_id);
+        myform.parentNode.removeChild(myform);
+}
