@@ -9,14 +9,17 @@ let count = 0
 let toe_board = document.querySelector(".gameboard")
 toe_board.addEventListener('click', (e)=>{
     let selection = e.target.innerHTML
-    
+    let position = e.target.id.split('')
     if(count === 0 && selection===''){
         e.target.innerHTML = 'X'
+        my_arr[position[0]][position[1]]='X'
         count++
     }else if(count === 1 && selection===''){
         e.target.innerHTML = 'O'
+        my_arr[position[0]][position[1]]='O'
         count--
     }
+    findwinner()
 })
 
 let resetButton = document.querySelector('.reset')
@@ -38,4 +41,15 @@ sbutton.addEventListener('submit', (e)=>{
 function Remove(form_id) {
         let myform = document.getElementById(form_id);
         myform.parentNode.removeChild(myform);
+}
+
+function findwinner(){
+    let b = my_arr.map(item=>item.join('')).filter(item => item === 'XXX'? 'XXX' : item === 'OOO' ? 'OOO' : null)
+    console.log(b)
+    if(b[0] ==='XXX'){
+        console.log("X is the Winner",b[0] )
+    }
+    if(b[0] ==='OOO'){
+        console.log('O is the winner',b[0])
+    }
 }
