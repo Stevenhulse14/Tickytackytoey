@@ -68,6 +68,6 @@ function findwinner() {
     console.log("X is the Winner");
   }
   if (row[0] === "OOO" || transposedArr[0]) {
-    console.log("O is the winner", row[0]);
+    console.log("O is the winner");
   }
 }
