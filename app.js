@@ -65,7 +65,7 @@ function findwinner() {
     .filter((item) => (item === "XXX" ? "XXX" : item === "OOO" ? "OOO" : null))
   console.log(transposedArr)
   if (row[0] === "XXX" || transposedArr[0]) {
-    console.log("X is the Winner", row[0]);
+    console.log("X is the Winner");
   }
   if (row[0] === "OOO" || transposedArr[0]) {
     console.log("O is the winner", row[0]);
