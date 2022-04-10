@@ -57,15 +57,17 @@ const transpose = (m) => {
   }
 
 function findwinner() {
-  let b = my_arr
+  let row = my_arr
     .map((item) => item.join(""))
     .filter((item) => (item === "XXX" ? "XXX" : item === "OOO" ? "OOO" : null));
-  console.log(b);
 
-  if (b[0] === "XXX") {
-    console.log("X is the Winner", b[0]);
+  let transposedArr = transpose(my_arr).map((item) => item.join(""))
+    .filter((item) => (item === "XXX" ? "XXX" : item === "OOO" ? "OOO" : null))
+  console.log(transposedArr)
+  if (row[0] === "XXX" || transposedArr[0]) {
+    console.log("X is the Winner", row[0]);
   }
-  if (b[0] === "OOO") {
-    console.log("O is the winner", b[0]);
+  if (row[0] === "OOO" || transposedArr[0]) {
+    console.log("O is the winner", row[0]);
   }
 }
