@@ -1,3 +1,5 @@
+import {Transpose, Remove, Checker, Dia} from '/utils.js'
+
 let my_arr = [
   [null, null, null],
   [null, null, null],
@@ -30,6 +32,7 @@ resetButton.addEventListener("click", (e) => {
     (tdDomElement) => (tdDomElement.innerHTML = "")
   );
   my_arr = [[null,null,null],[null,null,null],[null,null,null]]
+  count = 0
 });
 
 let sbutton = document.querySelector("#playerSubmit");
@@ -42,32 +45,17 @@ sbutton.addEventListener("submit", (e) => {
   Remove("playerSubmit");
 });
 
-function Remove(form_id) {
-  let myform = document.getElementById(form_id);
-  myform.parentNode.removeChild(myform);
-}
-
-const transpose = (m) => {
-    let newMatrix = [[],[],[]]
-  
-    for(let i = 0 ; i < m.length ; i++){
-      m[i].forEach((item,index) => newMatrix[index].push(item) )
-    }
-    return newMatrix
-  }
-
 function findwinner() {
-  let row = my_arr
-    .map((item) => item.join(""))
-    .filter((item) => (item === "XXX" ? "XXX" : item === "OOO" ? "OOO" : null));
 
-  let transposedArr = transpose(my_arr).map((item) => item.join(""))
-    .filter((item) => (item === "XXX" ? "XXX" : item === "OOO" ? "OOO" : null))
-  console.log(transposedArr)
-  if (row[0] === "XXX" || transposedArr[0]) {
+  let row = Checker(my_arr)
+  let columnArr = Checker(Transpose(my_arr))
+  let diagnols = Checker(Dia(my_arr))
+
+  console.log(diagnols)
+  if (row[0] === "XXX" || columnArr[0]==='XXX' || diagnols[0]==='XXX') {
     console.log("X is the Winner");
   }
-  if (row[0] === "OOO" || transposedArr[0]) {
+  if (row[0] === "OOO" || columnArr[0]==='XXX' || diagnols[0]==='XXX') {
     console.log("O is the winner");
   }
 }
