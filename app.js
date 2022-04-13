@@ -1,4 +1,4 @@
-import {Transpose, Remove, Checker, Dia} from '/utils.js'
+import {Transpose, Remove, Checker, Dia, Winner} from '/utils.js'
 
 let my_arr = [
   [null, null, null],
@@ -31,6 +31,9 @@ resetButton.addEventListener("click", (e) => {
   [...document.querySelectorAll("td")].forEach(
     (tdDomElement) => (tdDomElement.innerHTML = "")
   );
+ 
+  document.getElementById('winner').innerHTML === ''
+  
   my_arr = [[null,null,null],[null,null,null],[null,null,null]]
   count = 0
 });
@@ -54,8 +57,10 @@ function findwinner() {
   console.log(diagnols)
   if (row[0] === "XXX" || columnArr[0]==='XXX' || diagnols[0]==='XXX') {
     console.log("X is the Winner");
+    Winner('X')
   }
-  if (row[0] === "OOO" || columnArr[0]==='XXX' || diagnols[0]==='XXX') {
+  if (row[0] === "OOO" || columnArr[0]==='OOO' || diagnols[0]==='OOO') {
     console.log("O is the winner");
+    Winner('O')
   }
 }

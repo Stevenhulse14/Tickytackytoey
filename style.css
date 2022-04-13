@@ -30,6 +30,17 @@ body {
     justify-content: space-evenly;
     height:60px
 }
+#nameDisplay{
+    border-radius: 10px 10px 10px 10px;
+    position: fixed;
+    left:30%;
+    bottom:50%;
+    color:#d718d0;
+    background-color: rgba(211, 124, 124, 0.5) ;
+    box-shadow: 10px 5px 5px rgba(60, 56, 56, 0.5);
+    
+}
+
 .playerSubmit div{
     margin-top: 10px;
     margin-bottom: 10px;

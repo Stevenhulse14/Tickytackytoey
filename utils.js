@@ -16,6 +16,12 @@ export const Dia = (m) => {
 }
 
 export const Checker = (matrix) =>{
+
     return matrix.map((item) => item.join(""))
     .filter((item) => (item === "XXX" ? "XXX" : item === "OOO" ? "OOO" : null))
+
+}
+export const Winner = (type) => {
+    document.getElementById('winner').innerHTML=` Congradulations ${type} Got the W`
+
 }
